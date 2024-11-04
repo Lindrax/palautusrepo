@@ -46,3 +46,12 @@ class TestStatisticsService(unittest.TestCase):
         players = self.stats.top(3)
         names = [player.name for player in players]
         self.assertListEqual(names, ["Gretzky", "Lemieux", "Yzerman"])
+    def test_default(self):
+        players = self.stats.top(3)
+        names = [player.name for player in players]
+        self.assertListEqual(names, ["Gretzky", "Lemieux", "Yzerman"])
+
+    def test_defa(self):
+        players = self.stats.top(3, "lol")
+        names = [player.name for player in players]
+        self.assertListEqual(names, ["Gretzky", "Lemieux", "Yzerman"])
